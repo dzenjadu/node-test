@@ -49,3 +49,16 @@ const path = require('path')
 //         console.log('Файл был переименован.')
 //     }
 // )
+
+//файлы в папке
+fs.readdir('fs_readdir', (err, data) => {
+    console.log('array of files: ', data)
+    data.forEach(file => {
+        console.log(`
+            file: ${file},
+            exp: ${path.extname(file)},
+            size: ${fs.statSync(path.join(__dirname, 'fs_readdir', file)).size}B
+        `) //size: ${fs.statSync('fs_readdir/' + file).size}B
+    })
+   
+})
