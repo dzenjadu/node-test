@@ -4,7 +4,7 @@ const path = require('path')
 const app = express()
 
 app.get('/', (req,res) => {
-    // res.status(200) //отдает по умолчанию
+    // res.status(200) //отдает по умолчанию!
     res.sendFile(path.join(__dirname, 'views', 'index.html'))
 })
 
